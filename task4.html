@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>string</title>
+</head>
+<body>
+    <h2>Javascript strings</h2>
+    <button type="button" onclick="analyzeString()">Click</button>
+    <script>
+        function analyzeString(str) {
+            var data ='Hello Everyone'
+            var data2 ='javascript is my fav language'
+            var length = data.length
+            var lowerCase = data.toLowerCase()
+            var UpperCase = data.toUpperCase()
+            var countchar = data.split('e')
+            
+            var containsJavaScript = data2.includes("javascript");
+            console.log("length:",length)
+            console.log("lowerCase:",lowerCase)
+            console.log("UpperCase:",UpperCase)
+            console.log("find character:",countchar)
+            console.log("find javascipt:",containsJavaScript)
+        }
+        
+
+
+    </script>
+</body>
+</html>
