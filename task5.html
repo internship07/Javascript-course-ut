@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>string</title>
+</head>
+<body>
+    <h2>Javascript Arrays</h2>
+    <button type="button" onclick="myfunc()">Click</button>
+    <script>
+        function myfunc() {
+            var array1=[10,5,8,3,12,6]
+            array1.length
+            console.log("original array:",array1)
+            console.log("length",array1)
+            var array1=[10,5,8,3,12,6]
+            array1.push(7)
+            console.log("number 7 added at the end:",array1)
+            var array3=[10,5,8,3,12,6]
+            array3.shift()
+            console.log("After the first element removed:",array3)
+            array3.shift()
+            console.log("After the first element removed:",array3)
+            array3.sort()
+            console.log("After Sorting:",array3)
+            array3.sort((a, b) => a - b)
+            console.log("After Sorting in ascending order:",array3)
+            array3.reverse()
+            console.log("After Reversing:",array3)
+            if (array3.includes(8)) {
+                console.log("Number 8 exists")
+            } else {
+                console.log("Number 8 doesn't exist")
+            }
+            let index12 = array3.indexOf(12)
+            console.log("Index of number 12:", index12)
+            let doubledNumbers = array3.map(num => num * 2);
+            console.log("Doubled numbers array:", doubledNumbers);
+        }
+    </script>
+</body>
+</html>
