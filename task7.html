@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js obj,set,maps</title>
+</head>
+<body>
+    <h1>javascipt Arrays</h1>
+    <button type="button" onclick="myfunc()">Click</button>
+    <script>
+        function myfunc(){
+            var person1= {
+            name : "Ameer Sayed",
+            Age : "27",
+            gender : "male",
+            occupation : "accontant"
+            }
+            var person2= {
+            name : "Adnan M",
+            Age : "16",
+            gender : "male",
+            occupation : "student"
+            }
+            console.log(person1)
+            console.log(person2)
+// ================= Task on Sets =================
+// Function to create a Set with unique numbers
+            function createUniqueSet(arr) {
+            return new Set(arr);
+        }
+
+// Function to perform set operations: Union, Intersection, Difference
+            function union(setA, setB) {
+            return new Set([...setA, ...setB]);
+        }
+
+            function intersection(setA, setB) {
+            return new Set([...setA].filter(x => setB.has(x)));
+        }
+
+            function difference(setA, setB) {
+            return new Set([...setA].filter(x => !setB.has(x)));
+        }
+
+// Function to check if a Set is a subset of another Set
+function isSubset(setA, setB) {
+    return [...setA].every(x => setB.has(x));
+}
+
+// Example usage of Sets
+const set1 = createUniqueSet([1, 2, 3, 4, 5]);
+const set2 = createUniqueSet([3, 4, 5, 6, 7]);
+
+console.log("\nSet Operations:");
+console.log("Set 1:", set1);
+console.log("Set 2:", set2);
+console.log("Union:", union(set1, set2));
+console.log("Intersection:", intersection(set1, set2));
+console.log("Difference (Set1 - Set2):", difference(set1, set2));
+console.log("Is Set1 a subset of Set2?", isSubset(set1, set2));
+
+// ================= Task on Maps =================
+// Creating a Map and adding key-value pairs
+const myMap = new Map();
+myMap.set("name", "Alice");
+myMap.set("age", 25);
+myMap.set("city", "New York");
+
+// Accessing values
+console.log("\nMap Operations:");
+console.log("Name:", myMap.get("name"));
+
+// Updating values
+myMap.set("age", 26);
+console.log("Updated Age:", myMap.get("age"));
+
+// Deleting an entry
+myMap.delete("city");
+console.log("Map after deletion:", myMap);
+
+// Iterating over the Map
+console.log("\nIterating over Map:");
+myMap.forEach((value, key) => {
+    console.log(`${key}: ${value}`);
+});
+
+// Checking if a key exists in the Map
+console.log("\nChecking if 'name' exists in Map:", myMap.has("name"));
+console.log("Checking if 'city' exists in Map:", myMap.has("city"));
+
+// Getting Map size
+console.log("\nSize of Map:", myMap.size);
+
+
+        }
+    </script>
+</body>
+</html>
