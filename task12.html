@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy API Call</title>
+</head>
+<body>
+    <h1>Fetch Dummy API</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <pre id="output"></pre>
+
+    <script>
+        function fetchDummyAPI() {
+            return new Promise((resolve, reject) => {
+                fetch("https://jsonplaceholder.typicode.com/posts/1")
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Network response was not ok");
+                        }
+                        return response.json();
+                    })
+                    .then(data => resolve(data))
+                    .catch(error => reject(error));
+            });
+        }
+
+        async function fetchData() {
+            const outputElement = document.getElementById("output");
+            outputElement.textContent = "Loading...";
+            
+            try {
+                const data = await fetchDummyAPI();
+                outputElement.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                outputElement.textContent = "Error: " + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
